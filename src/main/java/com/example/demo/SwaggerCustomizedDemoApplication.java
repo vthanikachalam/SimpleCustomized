@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +21,12 @@ public class SwaggerCustomizedDemoApplication {
         SpringApplication.run(SwaggerCustomizedDemoApplication.class, args);
     }
 
+    @Value("${server.address}")
+    private String serverAddress;
+
+    @Value("${server.port}")
+    private String serverPort;
+
     @Bean
     public Docket swaggerConfiguration(){
         return new Docket(DocumentationType.SWAGGER_2)
@@ -27,6 +34,7 @@ public class SwaggerCustomizedDemoApplication {
                     .paths(PathSelectors.ant("/api/*"))
                     .apis(RequestHandlerSelectors.basePackage("com.example.demo"))
                     .build()
+                    .host(serverAddress+":"+serverPort)
                     .apiInfo(getApiInfo());
     }
 
