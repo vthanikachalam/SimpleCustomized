@@ -1,8 +1,8 @@
 ---
 swagger: "2.0"
 info:
-  description: Simple Address Book API for demo purpose
-  version: "1.0"
+  description: Address Book API for demo purpose
+  version: "1.1"
   title: Address Book API
   termsOfService: http://apache.org
   contact:
