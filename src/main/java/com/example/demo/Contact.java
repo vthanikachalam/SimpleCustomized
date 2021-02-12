@@ -1,9 +1,8 @@
 package com.example.demo;
 
-//import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-//@ApiModel(description = "Details about the Contact")
+//@ApiModel(description = "Details about the Contact :")
 public class Contact {
 
     @ApiModelProperty(notes = "The unique id of the Contact")
